@@ -3,7 +3,7 @@ Configuration of Ingest Pipeline on Elastic Search  Key value pair
 to convert Input { "key": "triggerId", "value": "111" }, { "key": "msisdn", "value": "123345677" } 
 Output { triggerId:111 , msisdn:123345677 }
 
-** Foreach Processor **
+**Foreach Processor**
  ```
  {
   "foreach": {
@@ -20,7 +20,7 @@ Output { triggerId:111 , msisdn:123345677 }
 ```
 
 
-**  OR For each processor with new Parent **
+**OR For each processor with new Parent**
 ```
 {
         "foreach": {
