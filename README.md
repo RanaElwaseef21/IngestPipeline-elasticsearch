@@ -1,13 +1,11 @@
 # IngestPipeline-elasticsearch (Key , value )
 Configuration of Ingest Pipeline on Elastic Search  Key value pair
-to convert from { "key": "triggerId", "value": "111" }, { "key": "msisdn", "value": "123345677" } 
+to convert Input { "key": "triggerId", "value": "111" }, { "key": "msisdn", "value": "123345677" } 
+Output { triggerId:111 , msisdn:123345677 }
 
-## Input --> 
-{ "key": "triggerId", "value": "111" }, { "key": "msisdn", "value": "123345677" } 
-## output -> 
-triggerId:111 , msisdn:123345677
-
- `{
+## Foreach Processor
+ ```
+ {
   "foreach": {
     "field": "layer.requestParameters",
     "processor": {
@@ -18,10 +16,12 @@ triggerId:111 , msisdn:123345677
     },
     "ignore_failure": false
   }
-}`
+}
+```
 
 
-# or add object in new parent and rename it 
+#  OR For each processor with new Parent
+```
 {
         "foreach": {
           "field": "layer.requestParameters",
@@ -49,3 +49,4 @@ triggerId:111 , msisdn:123345677
 	  "ignore_failure": true
 	}
 }
+```
