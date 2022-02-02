@@ -4,8 +4,10 @@ Configuration of Ingest Pipeline on Elastic Search
 
 # Ingest pipline for (key , value Pair) 
 
-## Input --> { "key": "triggerId", "value": "111" }, { "key": "msisdn", "value": "123345677" } 
-# output -> triggerId:111 , msisdn:123345677
+## Input --> 
+{ "key": "triggerId", "value": "111" }, { "key": "msisdn", "value": "123345677" } 
+# output -> 
+triggerId:111 , msisdn:123345677
 
 {
   "foreach": {
